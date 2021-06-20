@@ -1,0 +1,74 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>COVID-19 mortality risk prediction</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='diabetes-favicon.ico') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!-- Website Title -->
+    	<div class="container">
+            <h2 class='container-heading'><span class="heading_font">Early COVID-19 mortality risk prediction</span></h2><br>
+            <div class='description'>
+    			<p>(an Early Scoring System for Prediction of Disease Severity in COVID-19 using CBC)</p><br>
+    			<p> <a href="https://arxiv.org/ftp/arxiv/papers/2007/2007.15559.pdf">Please read the article</a></p>
+    		</div>
+    	</div>
+
+        <!-- Prediction Area -->
+        <div class="prediction-area">
+            <!-- Prediction Form -->
+            <div class="ml-container">
+    		  <form action="{{ url_for('predict') }}" method="POST">
+                <input class="form-input" type="text" name="Neutrophils_Count" placeholder="Neutrophils Count eg. 70"><br>
+                <input class="form-input" type="text" name="Age" placeholder="please put patient's age eg. 70"><br>
+                <input class="form-input" type="text" name="Platelet_Count" placeholder="Platelet Count eg. 6.7"><br>
+                <input class="form-input" type="text" name="Monocytes" placeholder="Monocytes (%) eg. 89.2"><br>
+                <input class="form-input" type="text" name="White_Blood_Cell_Count" placeholder="White Blood Cell Count eg. 495"><br>
+                <input class="form-input" type="text" name="Lymphocyte_Count" placeholder="Lymphocyte Count eg. 89.2"><br>
+                <input class="form-input" type="text" name="Red_Blood_Cell_Distribution_Width" placeholder="Red Blood Cell Distribution Width eg. 495"><br>
+                
+
+        		<input type="submit" class="my-cta-button" value="Predict">
+        	  </form>
+    	    </div>
+
+            <!-- IPL Banner - 1 -->
+            <div class='ipl-banner-left'>
+
+                <div class="slider-frame">
+                    <div class="slide-images-up">
+                        <!-- Image-1 -->
+                        <div class="image-container">
+                            <img class="image-width" src="{{ url_for('static', filename='Nomo4.png') }}" alt="Nomogram">
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+
+           
+
+            
+        </div>
+
+        <!-- Footer -->
+        <div class='footer'>
+           <div class="contact">
+               <p class='footer-description'><b>A novel COVID-19 project by <a href="https://sites.google.com/view/mchowdhury/home?authuser=0"style="color:white">Qatar University machine learning group.</a></b></p>
+              
+           </div>
+           <p class='footer-description'><b>This app made by <a href="https://sites.google.com/view/tawsifurrahman/home?authuser=0"style="color:white">Tawsifur Rahman.</a></b></p>
+       </div>
+
+    </body>
+</html>
